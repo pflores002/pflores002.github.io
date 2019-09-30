@@ -57,7 +57,9 @@ body {
                 text-align:left;
             }
 
-            p{
+            p,td{
                 padding: 16px;
-                text-align:left
+                text-align:left;
+                font-size: 16.5px;
+                font-family: "Times New Roman", Times, serif;
             }
