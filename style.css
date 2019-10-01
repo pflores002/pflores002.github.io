@@ -63,3 +63,28 @@ body {
                 font-size: 16.5px;
                 font-family: "Times New Roman", Times, serif;
             }
+
+            .fa {
+                padding: 15px;
+                font-size: 40px;
+                width: 20px;
+                text-align: center;
+                text-decoration: none;
+                margin: 10px 20px;
+                border-radius: 50%;
+            }
+
+            .fa:hover {
+                opacity: 0.8;
+            }
+
+            .fa-google {
+                background: #da483b;
+                color: white;
+            }
+
+            .fa-instagram {
+                background: #125688;
+                color: white;
+            }
+
