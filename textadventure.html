@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Text Adventure Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            #container{
+                position: absolute;
+                top: 100px;
+                bottom: 0px;
+                left: 0px;
+                right: 0px;
+                background-color: green;
+            }
+
+            #leftpane{
+                width:56%;
+                height: 100%;
+                float:left;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color:red;
+            }
+
+            #rightpane {
+                width:44%;
+                height: 100%;
+                float:left;
+                background-color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="navbar">
+            <li><a href="./">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li class="dropdown">
+                <div>Projects</div>
+                <ul class="dropdown-content">
+                    <li class="active"><a href="textadventure.html">Text Adventure</a></li>
+                    <li><a href="project2.html">Project 2</a></li>
+                    <li><a href="project3.html">Project 3</a></li>
+                </ul>
+            </li>
+            <li><a href="contactme.html">Contact Me</a></li>
+
+        </ul>
+        <h1>Text Adventure :D</h1>
+        <div id= 'container'>
+            <div id= 'leftpane'>
+            </div>
+
+            <div id='rightpane'>
+            </div>
+        </div>
+
+
+    </body>
+</html>
