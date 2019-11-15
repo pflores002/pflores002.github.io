@@ -10,7 +10,7 @@
                 bottom: 0px;
                 left: 0px;
                 right: 0px;
-                background-color: green;
+                background-color: #52527a;
             }
 
             #leftpane{
@@ -20,14 +20,12 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color:red;
             }
 
             #rightpane {
                 width:44%;
                 height: 100%;
                 float:left;
-                background-color:blue;
             }
 
             #storytext{
@@ -35,11 +33,9 @@
                 bottom: 50px;
                 top: 0px;
                 left: 56%;
-                right: 0px;
-                display: flex;
-                align-items: center;
+                right: 0px; 
                 justify-content: center;
-                background-color: pink;
+                padding: 12px
             }
 
             #choices{
@@ -51,10 +47,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: yellow;
             }
 
-            #b1{
+            #b1, #b2, #b3, #b4{
                 display: inline-block;
                 background-color: purple;
                 color: white;
@@ -63,6 +58,12 @@
                 border-radius: 8px;
                 text-decoration: none;
                 margin: 8px;
+            }
+
+            #storyimg{
+                max-height:97%;
+                max-width: 90%;
+                width: 90%;
             }
 
         </style>
@@ -86,20 +87,93 @@
         <h1>Text Adventure :D</h1>
         <div id= 'container'>
             <div id= 'leftpane'>
+                <img id='storyimg' src="images/strawberry.jpg">
             </div>
 
             <div id='rightpane'>
-                <div id='storytext'>
+                <div id='storytext'> 
+                    <p id='ptext1'>This is a potato.</p>
+                    <p id='ptext2'>This is another potato.</p>
+                    <p id='ptext3'>But this one is a fruit-</p>
+                    <p id='ptext4'>It is a strawberry.</p>
                 </div>
                 <div id='choices'>
-                    <a id='b1' href="#"> Choice 1 </a>
-                    <a id='b2' href="#"> Choice 2 </a>
-                    <a id='b3' href="#"> Choice 3 </a>
-                    <a id='b4' href="#"> Choice 4 </a>
+                    <a id='b1' onclick="bclick(1)" href="#"> Choice 1 </a>
+                    <a id='b2' onclick="bclick(2)" href="#"> Choice 2 </a>
+                    <a id='b3' onclick="bclick(3)" href="#"> Choice 3 </a>
+                    <a id='b4' onclick="bclick(4)" href="#"> Choice 4 </a>
                 </div>
             </div>
         </div>
 
+    <script>
+        var pic = document.getElementById('storyimg');
+        var ptext1 = document.getElementById('ptext1');
+        var ptext2 = document.getElementById('ptext2');
+        var ptext3 = document.getElementById('ptext3');
+        var ptext4 = document.getElementById('ptext4');
+        var b1 = document.getElementById('b1');
+        var b2 = document.getElementById('b2');
+        var b3 = document.getElementById('b3');
+        var b4 = document.getElementById('b4');
+        var state = "intro";
+        intro();
 
+        function intro(){
+            pic.src = "images/potatos.jpg";
+            ptext1.innerHTML = "Intro to story";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+            state = "meetWitch";
+        }
+
+        funtion meetWitch(){
+            pic.src = "images/pineapple.jpg";
+            ptext1.innerHTML = "I put a spell on you";
+            ptext2.innerHTML = "And now you're mine";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Fight";
+            b2.innerHTML = "Run";
+            b3.innerHTML = "Mercy";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+            state = "fruitBasket";
+        }
+
+            //state machine
+        function bclick(button){
+            if(state == "intro"){
+                if (button == 1){
+                    meetWitch();
+                }
+                else if(button == 2){
+                    //send them somewhere else
+                }
+            }
+            if(state == "meetWitch"){
+                if (button == 1){
+                    //scenario for fighting
+                }
+                else if (button == 2){
+                    //scenario for running
+                }
+                else if (button == 3){
+                    //scenario for mercy
+                }
+            }
+        }
+
+
+    </script>
     </body>
 </html>
