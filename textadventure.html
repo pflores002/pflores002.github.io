@@ -6,7 +6,7 @@
         <style>
             #container{
                 position: absolute;
-                top: 100px;
+                top: 150px;
                 bottom: 0px;
                 left: 0px;
                 right: 0px;
@@ -30,12 +30,12 @@
 
             #storytext{
                 position: absolute;
-                bottom: 50px;
+                bottom: 100px;
                 top: 0px;
                 left: 56%;
                 right: 0px; 
                 justify-content: center;
-                padding: 12px
+                padding: 8px;
             }
 
             #choices{
@@ -131,10 +131,9 @@
             b2.style.display = "block";
             b3.style.display = "none";
             b4.style.display = "none";
-            state = "meetWitch";
         }
 
-        funtion meetWitch(){
+        function meetWitch(){
             pic.src = "images/pineapple.jpg";
             ptext1.innerHTML = "I put a spell on you";
             ptext2.innerHTML = "And now you're mine";
@@ -147,31 +146,57 @@
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "none";
-            state = "fruitBasket";
         }
 
-            //state machine
+        function fightWitch(){
+             pic.src = "images/witch.jpg";
+            ptext1.innerHTML = "Which weapon?";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Pitch Fork";
+            b2.innerHTML = "Garlic";
+            b3.innerHTML = "Water";
+            b4.innerHTML = "Boulder";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        //state machine
         function bclick(button){
             if(state == "intro"){
                 if (button == 1){
                     meetWitch();
+                    state = "meetWitch";
                 }
                 else if(button == 2){
-                    //send them somewhere else
+                    intro();
+                    stae = "intro";
                 }
             }
-            if(state == "meetWitch"){
+            else if(state == "meetWitch"){
                 if (button == 1){
-                    //scenario for fighting
+                    //Fight
+                    fightWitch();
+                    state = "fightWitch";
                 }
                 else if (button == 2){
-                    //scenario for running
+                    //Run
                 }
                 else if (button == 3){
-                    //scenario for mercy
+                    //Mercy
                 }
             }
+
+            return false;
         }
+
+
+
+        
+        
 
 
     </script>
