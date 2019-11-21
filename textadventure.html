@@ -116,16 +116,18 @@
         var b2 = document.getElementById('b2');
         var b3 = document.getElementById('b3');
         var b4 = document.getElementById('b4');
+        var health = 100;
+        var patrickHealth = 100;
         var state = "intro";
         intro();
 
         function intro(){
-            pic.src = "images/potatos.jpg";
-            ptext1.innerHTML = "Intro to story";
+            pic.src = "images/titlescreen.jpg";
+            ptext1.innerHTML = "Are yee ready kids?";
             ptext2.innerHTML = "";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "Yes";
+            b1.innerHTML = "Aye aye Captain!";
             b2.innerHTML = "No";
             b1.style.display = "block";
             b2.style.display = "block";
@@ -133,57 +135,203 @@
             b4.style.display = "none";
         }
 
-        function meetWitch(){
-            pic.src = "images/pineapple.jpg";
-            ptext1.innerHTML = "I put a spell on you";
-            ptext2.innerHTML = "And now you're mine";
+        function gameOver(){
+            pic.src = "images/gameover.jpg";
+            ptext1.innerHTML = "";
+            ptext2.innerHTML = "Continue?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "Fight";
+            b1.innerHTML = "";
+            b2.innerHTML = "Yes";
+            b3.innerHTML = "No";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function sendToGoogle(){
+            window.location = 'https://www.google.com'
+        }
+
+        function meet Patrick(){
+             pic.src = "images/meetpatrick.jpg";
+            ptext1.innerHTML = "Who ever is the owner of the white sedan, you left your lights on.";
+            ptext2.innerHTML = "What would you like to do?";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Attack";
             b2.innerHTML = "Run";
-            b3.innerHTML = "Mercy";
+            b3.innerHTML = "Stay";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "none";
         }
 
-        function fightWitch(){
-             pic.src = "images/witch.jpg";
-            ptext1.innerHTML = "Which weapon?";
-            ptext2.innerHTML = "";
+        function meetSponge(){
+            pic.src = "images/meetsponge.jpg";
+            ptext1.innerHTML = "I'm ugly and proud.";
+            ptext2.innerHTML = "What would you like to do?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "Pitch Fork";
-            b2.innerHTML = "Garlic";
-            b3.innerHTML = "Water";
-            b4.innerHTML = "Boulder";
+            b1.innerHTML = "Attack";
+            b2.innerHTML = "Run";
+            b3.innerHTML = "Stay";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function battlePatrick(){
+            pic.src = "images/battlepatrick.jpg";
+            ptext1.innerHTML = "'Where's the leak, ma'am?.'";
+            ptext2.innerHTML = "What would you like to do?";
+            ptext3.innerHTML = "health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "Attack";
+            b2.innerHTML = "Run";
+            b3.innerHTML = "Stay";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+            ptext1.style.color = "pink";
+        }
+
+        function attackOptions(){
+            pic.src = "images/battlepatrick.jpg";
+            ptext1.innerHTML = "";
+            ptext2.innerHTML = "What attack do you perform?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "block";
         }
 
+        function battlePatrickSlap(){
+            pic.src = "images/patrickslap.jpg";
+            ptext1.innerHTML = "It was very in effective...Patrick retaliates by doing nothing.";
+            ptext2.innerHTML = "What do you do?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap again";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Tickle";
+            b4.innerHTML = "Trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+            ptext1.style.color = "blue";
+            ptext2.style.color = "green";
+            ptext3.style.color = "white";
+        }
+
+        function battlePatrickPunch(){
+            pic.src = "images/patrickpunch.jpg";
+            ptext1.innerHTML = "you missed... patrick obliterates you killing you";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function battlePatrickTickle(){
+            pic.src = "images/patrickticle.jpg";
+            ptext1.innerHTML = "What attack do you perform";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function battlePatrickTrombone(){
+            pic.src = "images/patricktrombone.jpg";
+            ptext1.innerHTML = "What attack do you perform";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function patrickDeath(){
+            pic.src = "images/patrickdeath.jpg";
+            ptext1.innerHTML = "patrick dies...";
+            ptext2.innerHTML = "What do you do now?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "Loot";
+            b2.innerHTML = "Walk away";
+            b3.innerHTML = "Wait whats that?";
+            b4.innerHTML = "uhh....";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+
         //state machine
         function bclick(button){
             if(state == "intro"){
                 if (button == 1){
-                    meetWitch();
-                    state = "meetWitch";
+                    meetPatrick();
+                    state = "meetPatrick";
                 }
                 else if(button == 2){
-                    intro();
-                    stae = "intro";
+                    gameOver();
+                    state = "gameover";
                 }
             }
-            else if(state == "meetWitch"){
+            else if(state == "gameOver"){
+                if(button == 1){
+                    intro();
+                    state = "intro";
+                }
+                else if(button == 2){
+                    sendToGoogle();
+                    state = "sendtoGoogle";
+                }
+            }
+            else if(state == "meetPatrick"){
                 if (button == 1){
                     //Fight
-                    fightWitch();
-                    state = "fightWitch";
+                    battlePatrick();
+                    state = "battlePatrick";
                 }
                 else if (button == 2){
                     //Run
+                    meetSponge();
+                    state = "meetSponge";
                 }
                 else if (button == 3){
                     //Mercy
