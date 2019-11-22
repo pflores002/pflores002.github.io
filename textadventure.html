@@ -87,15 +87,15 @@
         <h1>Text Adventure :D</h1>
         <div id= 'container'>
             <div id= 'leftpane'>
-                <img id='storyimg' src="images/titlescreen.jpg">
+                <img id='storyimg' src="images/witch.jpg">
             </div>
 
             <div id='rightpane'>
                 <div id='storytext'> 
-                    <p id='ptext1'>This is a potato.</p>
-                    <p id='ptext2'>This is another potato.</p>
-                    <p id='ptext3'>But this one is a fruit-</p>
-                    <p id='ptext4'>It is a strawberry.</p>
+                    <p id='ptext1'>idk</p>
+                    <p id='ptext2'>what to put</p>
+                    <p id='ptext3'>here</p>
+                    <p id='ptext4'>Words</p>
                 </div>
                 <div id='choices'>
                     <a id='b1' onclick="bclick(1)" href="#"> Choice 1 </a>
@@ -116,17 +116,18 @@
         var b2 = document.getElementById('b2');
         var b3 = document.getElementById('b3');
         var b4 = document.getElementById('b4');
-        var health = 100;
+        var health = 100
         var patrickHealth = 100;
+        var spongeHealth = 100;
         var state = "intro";
         intro();
 
         function intro(){
             pic.src = "images/titlescreen.jpg";
-            ptext1.innerHTML = "Are yee ready kids?";
-            ptext2.innerHTML = "";
-            ptext3.innerHTML = "";
-            ptext4.innerHTML = "";
+            ptext1.innerHTML = "Your name is Rabbi Quartz Abraham, champion marathon runner.";
+            ptext2.innerHTML = "Your family has been taken and transported into a kids show of horrors- Spongebob Squarepants.";
+            ptext3.innerHTML = "You must set off into a journey to bring back your family.";
+            ptext4.innerHTML = "Are ye ready kids?";
             b1.innerHTML = "Aye aye Captain!";
             b2.innerHTML = "No";
             b1.style.display = "block";
@@ -169,20 +170,6 @@
             b4.style.display = "none";
         }
 
-        function meetSponge(){
-            pic.src = "images/meetsponge.jpg";
-            ptext1.innerHTML = "I'm ugly and proud.";
-            ptext2.innerHTML = "What would you like to do?";
-            ptext3.innerHTML = "";
-            ptext4.innerHTML = "";
-            b1.innerHTML = "Attack";
-            b2.innerHTML = "Run";
-            b3.innerHTML = "Stay";
-            b1.style.display = "block";
-            b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "none";
-        }
 
         function battlePatrick(){
             pic.src = "images/battlepatrick.jpg";
@@ -299,6 +286,136 @@
             b4.style.display = "block";
         }
 
+        function meetSponge(){
+            pic.src = "images/meetsponge.jpg";
+            ptext1.innerHTML = "I'm ugly and proud.";
+            ptext2.innerHTML = "What would you like to do?";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Attack";
+            b2.innerHTML = "Run";
+            b3.innerHTML = "Stay";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function battleSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "'Remember, licking doorknobs is illegal on other planets.'";
+            ptext2.innerHTML = "What would you like to do?";
+            ptext3.innerHTML = "health:" + health;
+            ptext4.innerHTML = "Spongebob health:" + spongeHealth;
+            b1.innerHTML = "Attack";
+            b2.innerHTML = "Run";
+            b3.innerHTML = "Stay";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+            ptext1.style.color = "pink";
+        }
+
+        function attackOptions(){
+            pic.src = "images/";
+            ptext1.innerHTML = "";
+            ptext2.innerHTML = "What attack do you perform?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function battleSpongeSlap(){
+            pic.src = "images/";
+            ptext1.innerHTML = "It was very in effective...Patrick retaliates by doing nothing.";
+            ptext2.innerHTML = "What do you do?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap again";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Tickle";
+            b4.innerHTML = "Trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+            ptext1.style.color = "blue";
+            ptext2.style.color = "green";
+            ptext3.style.color = "white";
+        }
+
+        function battleSpongePunch(){
+            pic.src = "images/";
+            ptext1.innerHTML = "Critical hit! Spongebob dies";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Spongebob health:" + spongeHealth;
+            b1.innerHTML = "continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function battleSpongeTickle(){
+            pic.src = "images/";
+            ptext1.innerHTML = "What attack do you perform";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Spongebob health:" + spongeHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function battleSpongeTrombone(){
+            pic.src = "images/";
+            ptext1.innerHTML = "What attack do you perform?";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "slap";
+            b2.innerHTML = "punch";
+            b3.innerHTML = "tickle";
+            b4.innerHTML = "trombone";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function spongeDeath(){
+            pic.src = "images/";
+            ptext1.innerHTML = "patrick dies...";
+            ptext2.innerHTML = "What do you do now?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            b1.innerHTML = "Loot";
+            b2.innerHTML = "Walk away";
+            b3.innerHTML = "Wait whats that?";
+            b4.innerHTML = "uhh....";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
 
         //state machine
         function bclick(button){
@@ -309,7 +426,7 @@
                 }
                 else if(button == 2){
                     gameOver();
-                    state = "gameover";
+                    state = "gameOver";
                 }
             }
             else if(state == "gameOver"){
@@ -319,34 +436,24 @@
                 }
                 else if(button == 2){
                     sendToGoogle();
-                    state = "sendtoGoogle";
+                    state = "sendToGoogle";
                 }
             }
             else if(state == "meetPatrick"){
-                if (button == 1){
-                    //Fight
-                    battlePatrick();
+                if(button == 1){
+                battlePatrick();
                     state = "battlePatrick";
                 }
-                else if (button == 2){
-                    //Run
+                else if(button == 2){
                     meetSponge();
                     state = "meetSponge";
                 }
-                else if (button == 3){
-                    //Mercy
-                }
+
             }
 
             return false;
-        }
-
-
-
-        
-        
-
-
+    }
+    
     </script>
     </body>
 </html>
