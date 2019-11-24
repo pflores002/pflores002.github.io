@@ -69,7 +69,7 @@
         </style>
     </head>
     <body>
-        <ul class="navbar">
+        <ul class= "navbar">
             <li><a href="./">Home</a></li>
             <li><a href="aboutme.html">About Me</a></li>
             <li><a href="resume.html">Resume</a></li>
@@ -92,10 +92,10 @@
 
             <div id='rightpane'>
                 <div id='storytext'> 
-                    <p id='ptext1'>idk</p>
-                    <p id='ptext2'>what to put</p>
-                    <p id='ptext3'>here</p>
-                    <p id='ptext4'>Words</p>
+                    <p id='ptext1'>Nevermind</p>
+                    <p id='ptext2'>I DID IT</p>
+                    <p id='ptext3'>words</p>
+                    <p id='ptext4'>words</p>
                 </div>
                 <div id='choices'>
                     <a id='b1' onclick="bclick(1)" href="#"> Choice 1 </a>
@@ -118,6 +118,7 @@
         var b4 = document.getElementById('b4');
         var health = 100
         var patrickHealth = 100;
+        var instantDeath = -100;
         var spongeHealth = 100;
         var state = "intro";
         intro();
@@ -138,13 +139,13 @@
 
         function gameOver(){
             pic.src = "images/gameover.jpg";
-            ptext1.innerHTML = "";
-            ptext2.innerHTML = "Continue?";
+            ptext1.innerHTML = "Continue?";
+            ptext2.innerHTML = "";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "";
-            b2.innerHTML = "Yes";
-            b3.innerHTML = "No";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b3.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "none";
@@ -155,7 +156,7 @@
             window.location = 'https://www.google.com'
         }
 
-        function meet Patrick(){
+        function meetPatrick(){
              pic.src = "images/meetpatrick.jpg";
             ptext1.innerHTML = "Who ever is the owner of the white sedan, you left your lights on.";
             ptext2.innerHTML = "What would you like to do?";
@@ -167,6 +168,36 @@
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function talkToPatrick(){
+        pic.src = "images/meetpatrick.jpg";
+        ptext1.innerHTML = "What do you want to talk about?";
+        ptext2.innerHTML = "^";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "";
+        b2.innerHTML = "Run";
+        b3.innerHTML = "Stay";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+        }
+
+        function befriendPatrick(){
+            pic.src = "images/meetpatrick.jpg";
+            ptext1.innerHTML = "You befriend Patrick and he walks you to Spongebob.";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
             b4.style.display = "none";
         }
 
@@ -184,7 +215,6 @@
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "none";
-            ptext1.style.color = "pink";
         }
 
         function attackOptions(){
@@ -217,16 +247,13 @@
             b2.style.display = "block";
             b3.style.display = "block";
             b4.style.display = "block";
-            ptext1.style.color = "blue";
-            ptext2.style.color = "green";
-            ptext3.style.color = "white";
         }
 
         function battlePatrickPunch(){
             pic.src = "images/patrickpunch.jpg";
             ptext1.innerHTML = "you missed... patrick obliterates you killing you";
             ptext2.innerHTML = "";
-            ptext3.innerHTML = "Health:" + health;
+            ptext3.innerHTML = "Health: 0";
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
             b1.innerHTML = "continue";
             b2.innerHTML = "";
@@ -416,6 +443,21 @@
             b4.style.display = "block";
         }
 
+        function meetBoth(){
+        pic.src = "images/";
+        ptext1.innerHTML = "Knowledge can never replace friendship, I prefer to be an idiot.";
+        ptext2.innerHTML = "What would you like to do?";
+        ptext3.innerHTML = "";
+        ptext4.innerHTML = "";
+        b1.innerHTML = "Attack";
+        b2.innerHTML = "Run";
+        b3.innerHTML = "Stay";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+        }
+
 
         //state machine
         function bclick(button){
@@ -448,9 +490,67 @@
                     meetSponge();
                     state = "meetSponge";
                 }
-
+                else if(button == 3){
+                talkToPatrick();
+                state = "talkToPatrick";
+                }
             }
-
+            else if(state=="attackOptions"){
+                if(button == 1){
+                    patrickHealth--;
+                    if(patrickHealth==0){
+                        patrickDeath();
+                        state = "patrickDeath";
+                    } else {
+                        battlePatrickSlap();
+                        state = "battlePatrickSlap";
+                    }
+                }
+                else if(button == 2){
+                    battlePatrickPunch();
+                    state = "battlePatrickPunch";
+                }
+                else if(button == 3){
+                    befriendPatrick();
+                    state = "befriendPatrick";
+                }
+                else if(button == 4){
+                    battlePatrickTrombone();
+                    state = "battlePatrickTrombone";
+                }
+            }
+            else if(state == "battlePatrickSlap"){
+                if(button == 1){
+                    patrickHealth--;
+                    if(patrickHealth = 0){
+                        patrickDeath();
+                        state = "patrickDeath";
+                    } else {
+                        battlePatrickSlap();
+                        state = "battlePatrickSlap";
+                    }
+                }
+                else if(button == 2){
+                    battlePatrickPunch();
+                    state= "battlePatrickPunch";
+                }
+                else if(button == 3){
+                    befriendPatrick();
+                    state = "befriendPatrick";
+                }
+            }
+            else if(state == "battlePatrickPunch"){
+                if(button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "befriendPatrick"){
+                if(button == 1){
+                    meetBoth();
+                    state = "meetBoth";
+                }
+            }
             return false;
     }
     
