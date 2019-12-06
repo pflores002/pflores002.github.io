@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -126,8 +127,8 @@
         function intro(){
             pic.src = "images/titlescreen.jpg";
             ptext1.innerHTML = "Your name is Rabbi Quartz Abraham, champion marathon runner.";
-            ptext2.innerHTML = "Your family has been taken and transported into a kids show of horrors- Spongebob Squarepants.";
-            ptext3.innerHTML = "You must set off into a journey to bring back your family.";
+            ptext2.innerHTML = "Suddenly, as you were racing, you transported into a kids show of horrors- Spongebob Squarepants.";
+            ptext3.innerHTML = "You must set off into a journey to go home.";
             ptext4.innerHTML = "Are ye ready kids? (It's not actually done yet, there's still things to be fixed here)";
             b1.innerHTML = "Aye aye Captain!";
             b2.innerHTML = "No";
@@ -145,7 +146,6 @@
             ptext4.innerHTML = "";
             b1.innerHTML = "Yes";
             b2.innerHTML = "No";
-            b3.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "none";
@@ -157,14 +157,14 @@
         }
 
         function meetPatrick(){
-             pic.src = "images/meetpatrick.jpg";
-            ptext1.innerHTML = "Who ever is the owner of the white sedan, you left your lights on.";
+            pic.src = "images/meetpatrick.jpg";
+            ptext1.innerHTML = "You meet a pink starfish along the road.";
             ptext2.innerHTML = "What would you like to do?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
             b1.innerHTML = "Attack";
             b2.innerHTML = "Run";
-            b3.innerHTML = "Stay";
+            b3.innerHTML = "Talk";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
@@ -172,29 +172,63 @@
         }
 
         function talkToPatrick(){
-        pic.src = "images/meetpatrick.jpg";
-        ptext1.innerHTML = "What do you want to talk about?";
-        ptext2.innerHTML = "^";
-        ptext3.innerHTML = "";
-        ptext4.innerHTML = "";
-        b1.innerHTML = "";
-        b2.innerHTML = "Run";
-        b3.innerHTML = "Stay";
-        b1.style.display = "block";
-        b2.style.display = "block";
-        b3.style.display = "block";
-        b4.style.display = "none";
-        }
-
-        function befriendPatrick(){
             pic.src = "images/meetpatrick.jpg";
-            ptext1.innerHTML = "You befriend Patrick and he walks you to Spongebob.";
+            ptext1.innerHTML = "What do you want to talk about?";
             ptext2.innerHTML = "";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "continue";
+            b1.innerHTML = "Jellyfish Catching";
+            b2.innerHTML = "Is this the Krusty Krab?";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function jellyCatchingPatrick(){
+            pic.src = "images/";
+            ptext1.innerHTML = "This gives Patrick joy!";
+            ptext2.innerHTML = "You have acquired Jellycatching Net and a friendship";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
             b2.innerHTML = "";
             b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function krustyKrabPatrick(){
+            pic.src = "images/";
+            ptext1.innerHTML = "'No! THIS IS PATRICK!!!'";
+            ptext2.innerHTML = "You have angered the starfish, Patrick kills you.";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function runAwayPatrick(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You run away";
+            ptext2.innerHTML = "But, you come across a yellow sponge!";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "none";
             b3.style.display = "none";
@@ -208,25 +242,10 @@
             ptext2.innerHTML = "What would you like to do?";
             ptext3.innerHTML = "health:" + health;
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "Attack";
-            b2.innerHTML = "Run";
-            b3.innerHTML = "Stay";
-            b1.style.display = "block";
-            b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "none";
-        }
-
-        function attackOptions(){
-            pic.src = "images/battlepatrick.jpg";
-            ptext1.innerHTML = "";
-            ptext2.innerHTML = "What attack do you perform?";
-            ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Tickle";
+            b4.innerHTML = "Trombone";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
@@ -235,11 +254,11 @@
 
         function battlePatrickSlap(){
             pic.src = "images/patrickslap.jpg";
-            ptext1.innerHTML = "It was very in effective...Patrick retaliates by doing nothing.";
+            ptext1.innerHTML = "It was very ineffective...Patrick retaliates by doing nothing.";
             ptext2.innerHTML = "What do you do?";
             ptext3.innerHTML = "Health:" + health;
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap again";
+            b1.innerHTML = "Slap again";
             b2.innerHTML = "Punch";
             b3.innerHTML = "Tickle";
             b4.innerHTML = "Trombone";
@@ -251,11 +270,11 @@
 
         function battlePatrickPunch(){
             pic.src = "images/patrickpunch.jpg";
-            ptext1.innerHTML = "you missed... patrick obliterates you killing you";
+            ptext1.innerHTML = "You missed... Patrick kills you";
             ptext2.innerHTML = "";
             ptext3.innerHTML = "Health: 0";
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "continue";
+            b1.innerHTML = "Continue";
             b2.innerHTML = "";
             b3.innerHTML = "";
             b4.innerHTML = "";
@@ -266,15 +285,15 @@
         }
 
         function battlePatrickTickle(){
-            pic.src = "images/patrickticle.jpg";
-            ptext1.innerHTML = "What attack do you perform";
-            ptext2.innerHTML = "";
+            pic.src = "images/patricktickle.jpg";
+            ptext1.innerHTML = "He's distracted!";
+            ptext2.innerHTML = "Quick! What do you do?";
             ptext3.innerHTML = "Health:" + health;
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Run";
+            b4.innerHTML = "Trombone";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
@@ -283,48 +302,110 @@
 
         function battlePatrickTrombone(){
             pic.src = "images/patricktrombone.jpg";
-            ptext1.innerHTML = "What attack do you perform";
+            ptext1.innerHTML = "He's dead!";
             ptext2.innerHTML = "";
             ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
+            ptext4.innerHTML = "Patrick health: 0";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
             b1.style.display = "block";
-            b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
+
 
         function patrickDeath(){
             pic.src = "images/patrickdeath.jpg";
-            ptext1.innerHTML = "patrick dies...";
-            ptext2.innerHTML = "What do you do now?";
-            ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "Loot";
-            b2.innerHTML = "Walk away";
-            b3.innerHTML = "Wait whats that?";
-            b4.innerHTML = "uhh....";
+            ptext1.innerHTML = "Welp, what do you do now?";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Walk away";
+            b2.innerHTML = "I wanna leave";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
 
         function meetSponge(){
             pic.src = "images/meetsponge.jpg";
-            ptext1.innerHTML = "I'm ugly and proud.";
+            ptext1.innerHTML = "'I'm ugly and proud.''";
             ptext2.innerHTML = "What would you like to do?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
             b1.innerHTML = "Attack";
             b2.innerHTML = "Run";
-            b3.innerHTML = "Stay";
+            b3.innerHTML = "Talk";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function talkToSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "What do you want to talk about?";
+            ptext2.innerHTML = "";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Jellyfish Catching";
+            b2.innerHTML = "Where's Gary?";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function jellyCatchingSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "This gives Spongebob joy!";
+            ptext2.innerHTML = "You have acquired Jellycatching Net and a friendship";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function wheresGarySponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "This saddens Spongebob and he cries";
+            ptext2.innerHTML = "You die in his flood of tears";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function runAwaySponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You run away";
+            ptext2.innerHTML = "But, now you ";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
             b4.style.display = "none";
         }
 
@@ -334,38 +415,7 @@
             ptext2.innerHTML = "What would you like to do?";
             ptext3.innerHTML = "health:" + health;
             ptext4.innerHTML = "Spongebob health:" + spongeHealth;
-            b1.innerHTML = "Attack";
-            b2.innerHTML = "Run";
-            b3.innerHTML = "Stay";
-            b1.style.display = "block";
-            b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "none";
-        }
-
-        function attackOptions(){
-            pic.src = "images/";
-            ptext1.innerHTML = "";
-            ptext2.innerHTML = "What attack do you perform?";
-            ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
-            b1.style.display = "block";
-            b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "block";
-        }
-
-        function battleSpongeSlap(){
-            pic.src = "images/";
-            ptext1.innerHTML = "It was very in effective...Patrick retaliates by doing nothing.";
-            ptext2.innerHTML = "What do you do?";
-            ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap again";
+            b1.innerHTML = "Slap";
             b2.innerHTML = "Punch";
             b3.innerHTML = "Tickle";
             b4.innerHTML = "Trombone";
@@ -375,13 +425,30 @@
             b4.style.display = "block";
         }
 
+
+        function battleSpongeSlap(){
+            pic.src = "images/";
+            ptext1.innerHTML = "Ok, now he's dead...";
+            ptext2.innerHTML = "Congrats, killer";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Sponebob health: 0";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
         function battleSpongePunch(){
             pic.src = "images/";
-            ptext1.innerHTML = "Critical hit! Spongebob dies";
-            ptext2.innerHTML = "";
-            ptext3.innerHTML = "Health:" + health;
+            ptext1.innerHTML = "Bad idea. Spongebob retaliates by smacking you with a spatula";
+            ptext2.innerHTML = "You died";
+            ptext3.innerHTML = "Health: 0";
             ptext4.innerHTML = "Spongebob health:" + spongeHealth;
-            b1.innerHTML = "continue";
+            b1.innerHTML = "Continue";
             b2.innerHTML = "";
             b3.innerHTML = "";
             b4.innerHTML = "";
@@ -393,14 +460,14 @@
 
         function battleSpongeTickle(){
             pic.src = "images/";
-            ptext1.innerHTML = "What attack do you perform";
-            ptext2.innerHTML = "";
+            ptext1.innerHTML = "You distract him, but it doesn't last long";
+            ptext2.innerHTML = "What do you do now?";
             ptext3.innerHTML = "Health:" + health;
             ptext4.innerHTML = "Spongebob health:" + spongeHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Run";
+            b4.innerHTML = "Trombone";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
@@ -409,52 +476,121 @@
 
         function battleSpongeTrombone(){
             pic.src = "images/";
-            ptext1.innerHTML = "What attack do you perform?";
-            ptext2.innerHTML = "";
+            ptext1.innerHTML = "Ineffective; he dodges.";
+            ptext2.innerHTML = "What next?";
             ptext3.innerHTML = "Health:" + health;
             ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "slap";
-            b2.innerHTML = "punch";
-            b3.innerHTML = "tickle";
-            b4.innerHTML = "trombone";
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Tickle";
+            b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
             b3.style.display = "block";
-            b4.style.display = "block";
+            b4.style.display = "none";
         }
 
         function spongeDeath(){
             pic.src = "images/";
-            ptext1.innerHTML = "patrick dies...";
+            ptext1.innerHTML = "RIP to the greatest sponge a kid could ask for";
             ptext2.innerHTML = "What do you do now?";
-            ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
-            b1.innerHTML = "Loot";
-            b2.innerHTML = "Walk away";
-            b3.innerHTML = "Wait whats that?";
-            b4.innerHTML = "uhh....";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Walk away";
+            b2.innerHTML = "No more";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
-            b3.style.display = "block";
-            b4.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        //if you kill both Sponge and Patrick
+        function noMercy(){
+            pic.src = "images/";
+            ptext1.innerHTML = "Well, you've done it.";
+            ptext2.innerHTML = "You killed the biggest bads there are and possibly ruined everyone's childhood";
+            ptext3.innerHTML = "I hope you're proud of yourself";
+            ptext4.innerHTML = "NO MERCY:  Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        //if you friend both Patrick and Sponge and kill boss Jelly
+        function fIsForFriends(){
+            pic.src = "images/";
+            ptext1.innerHTML = "'Knowledge cannot replace friendship. I’d rather be an idiot than lose you.''";
+            ptext2.innerHTML = "Patrick and Spongebob take you to the portal and you all hug for a final goodbye.";
+            ptext3.innerHTML = "In the end we learned, the point of a journey is the friend you make along the way";
+            ptext4.innerHTML = "F is for Friends:  Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        //if you run from both Sponge and Patrick
+        function theCowardRoute(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You used your marathons skills to your advantage and ran from every opponent you faced";
+            ptext2.innerHTML = "Somehow, you found whirlpool that will lead you up into the surface";
+            ptext3.innerHTML = "As you swam to the nearest shore, you think 'I will never watch that show again'.";
+            ptext4.innerHTML = "COWARD:  Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
 
-        function meetBoth(){
-        pic.src = "images/";
-        ptext1.innerHTML = "Knowledge can never replace friendship, I prefer to be an idiot.";
-        ptext2.innerHTML = "What would you like to do?";
-        ptext3.innerHTML = "";
-        ptext4.innerHTML = "";
-        b1.innerHTML = "Attack";
-        b2.innerHTML = "Run";
-        b3.innerHTML = "Stay";
-        b1.style.display = "block";
-        b2.style.display = "block";
-        b3.style.display = "block";
-        b4.style.display = "none";
+        //if you kill Patrick and friend Sponge- tell him?
+        function tellSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "As you walk together, you start thinking about the pink starfish you killed.";
+            ptext2.innerHTML = "You turn to Spongebob and ask if he knew him. 'Yeah! That's my best friend Patick!'";
+            ptext3.innerHTML = "You begin to feel nervous about this news. What do you do?";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Tell the truth";
+            b2.innerHTML = "Lie";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
+        //if you kill Patrick and friend Sponge- tell truth
+
+        //if you kill Patrick and friend Sponge- tell lie
 
 
+        //if you friend Patrick and kill Sponge
+        function betrayalOfPatrick(){
+            pic.src = "images/";
+            ptext1.innerHTML = "As you stand over the body of the yellow sponge, you turn to face Patrick with a smile";
+            ptext2.innerHTML = "You quickly frown when you see the horror and anger in the normally-goofy starfish's face";
+            ptext3.innerHTML = "'You killed my best friend. I hope you understand...'";
+            ptext4.innerHTML = "PATRICK'S BETRAYAL:  Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
         //state machine
         function bclick(button){
             if(state == "intro"){
@@ -479,16 +615,16 @@
             }
             else if(state == "meetPatrick"){
                 if(button == 1){
-                battlePatrick();
+                    battlePatrick();
                     state = "battlePatrick";
                 }
                 else if(button == 2){
-                    meetSponge();
-                    state = "meetSponge";
+                    runAwayPatrick();
+                    state = "runAwayPatrick"; 
                 }
                 else if(button == 3){
-                talkToPatrick();
-                state = "talkToPatrick";
+                    talkToPatrick();
+                    state = "talkToPatrick";
                 }
             }
             else if(state=="attackOptions"){
