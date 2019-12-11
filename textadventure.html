@@ -121,6 +121,7 @@
         var patrickHealth = 100;
         var instantDeath = -100;
         var spongeHealth = 100;
+        var jellyHealth = 1000;
         var state = "intro";
         intro();
 
@@ -137,7 +138,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+                //if b1 meetPatrick, else if b2 gameOver
         function gameOver(){
             pic.src = "images/gameover.jpg";
             ptext1.innerHTML = "Continue?";
@@ -151,7 +152,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //if b1 intro, else if b2 sendToGoogle
         function sendToGoogle(){
             window.location = 'https://www.google.com'
         }
@@ -170,7 +171,7 @@
             b3.style.display = "block";
             b4.style.display = "none";
         }
-
+            //if b1 battlePatrick, else if b2 runAwayPatrick, else if b3 talkToPatrick
         function talkToPatrick(){
             pic.src = "images/meetpatrick.jpg";
             ptext1.innerHTML = "What do you want to talk about?";
@@ -186,7 +187,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //if b1 jellyCatchingPatrick, else if b2 krustyKrabPatrick
         function jellyCatchingPatrick(){
             pic.src = "images/";
             ptext1.innerHTML = "This gives Patrick joy!";
@@ -202,7 +203,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //if b1 meetSponge
         function krustyKrabPatrick(){
             pic.src = "images/";
             ptext1.innerHTML = "'No! THIS IS PATRICK!!!'";
@@ -218,7 +219,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //if b1 gameOver
         function runAwayPatrick(){
             pic.src = "images/";
             ptext1.innerHTML = "You run away";
@@ -234,8 +235,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
-
+            // if b1 meetSponge
         function battlePatrick(){
             pic.src = "images/battlepatrick.jpg";
             ptext1.innerHTML = "'Where's the leak, ma'am?.'";
@@ -251,7 +251,7 @@
             b3.style.display = "block";
             b4.style.display = "block";
         }
-
+            //if b1 battlePatrickSlap, else if b2 battlePatrickPunch, else if b3 battlePatrickTickle, else if b4 battlePatrickTrombone
         function battlePatrickSlap(){
             pic.src = "images/patrickslap.jpg";
             ptext1.innerHTML = "It was very ineffective...Patrick retaliates by doing nothing.";
@@ -267,7 +267,7 @@
             b3.style.display = "block";
             b4.style.display = "block";
         }
-
+            //if b1 battlePatrickSlap, else if b2 battlePatrickPunch, else if b3 battlePatrickTickle, else if b4 battlePatrickTrombone
         function battlePatrickPunch(){
             pic.src = "images/patrickpunch.jpg";
             ptext1.innerHTML = "You missed... Patrick kills you";
@@ -283,7 +283,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //if b1 gameOver
         function battlePatrickTickle(){
             pic.src = "images/patricktickle.jpg";
             ptext1.innerHTML = "He's distracted!";
@@ -299,7 +299,7 @@
             b3.style.display = "block";
             b4.style.display = "block";
         }
-
+            //if b1 battlePatrickSlap, else if b2 battlePatrickPunch, else if b3 runAwayPatrick, else if b4 battle Patrick Trombone
         function battlePatrickTrombone(){
             pic.src = "images/patricktrombone.jpg";
             ptext1.innerHTML = "He's dead!";
@@ -399,13 +399,16 @@
         function runAwaySponge(){
             pic.src = "images/";
             ptext1.innerHTML = "You run away";
-            ptext2.innerHTML = "But, now you ";
+            ptext2.innerHTML = "";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "Continue";
+            b1.innerHTML = "Continue (click if Patrick is dead)";
+            b2.innerHTML = "";
+            b3.innerHTML = "Continue (click if you ran from Patrick)";
+            b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "none";
-            b3.style.display = "none";
+            b3.style.display = "block";
             b4.style.display = "none";
         }
 
@@ -457,7 +460,7 @@
             b3.style.display = "none";
             b4.style.display = "none";
         }
-
+            //gameover
         function battleSpongeTickle(){
             pic.src = "images/";
             ptext1.innerHTML = "You distract him, but it doesn't last long";
@@ -479,7 +482,7 @@
             ptext1.innerHTML = "Ineffective; he dodges.";
             ptext2.innerHTML = "What next?";
             ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Patrick health:" + patrickHealth;
+            ptext4.innerHTML = "Spongebob health:" + spongeHealth;
             b1.innerHTML = "Slap";
             b2.innerHTML = "Punch";
             b3.innerHTML = "Tickle";
@@ -496,12 +499,108 @@
             ptext2.innerHTML = "What do you do now?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
-            b1.innerHTML = "Walk away";
-            b2.innerHTML = "No more";
+            b1.innerHTML = "Walk away (if Patrick is alive)";
+            b2.innerHTML = "Walk away (if Patrick is friend)";
+            b3.innerHTML = "Walk away (if Patrick is dead)";
+            b4.innerHTML = "No more";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "block";
+        }
+
+        function faceJelly(){
+            pic.src = "images/"
+            ptext1.innerHTML = "You, Patrick, and Spongebob walk to the Jellyfish Fields when you encounter the largest jellyfish you have ever seen";
+            ptext2.innerHTML = "Your only choice is to fight";
+            ptext3.innerHTML = "";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function battleJelly(){
+            pic.src = "images/"
+            ptext1.innerHTML = "What will you do?";
+            ptext2.innerHTML = "Health:" + health;
+            ptext3.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Net";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function battleJellySlap(){
+            pic.src = "images/"
+            ptext1.innerHTML = "You choose to slap the jellyfish, but it seems to be ineffective.";
+            ptext2.innerHTML = "The jellyfish hits you back with a critical hit!";
+            ptext3.innerHTML = "Health:" + health-60;
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            b1.innerHTML = "Slap again";
+            b2.innerHTML = "Punch";
+            b3.innerHTML = "Net";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "block";
+            b3.style.display = "block";
+            b4.style.display = "none";
+        }
+
+        function battleJellySlapAgain(){
+            pic.src = "images/"
+            ptext1.innerHTML = "You choose to slap the jellyfish one more time, it's still ineffective.";
+            ptext2.innerHTML = "I don't know why you expected it to change, anyway you're dead";
+            ptext3.innerHTML = "Health: 0";
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function battleJellyPunch(){
+            pic.src = "images/"
+            ptext1.innerHTML = "You hit the jellyfish with a punch and manage to do slight damage.";
+            ptext2.innerHTML = "It seems to be confused. What do you do?";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyHealth-20;
+            b1.innerHTML = "Slap";
+            b2.innerHTML = "Net";
             b3.innerHTML = "";
             b4.innerHTML = "";
             b1.style.display = "block";
             b2.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+
+        function battleJellyNet(){
+            pic.src = "images/"
+            ptext1.innerHTML = "You decide to try and catch it with a net";
+            ptext2.innerHTML = "And surprisingly, it worked!";
+            ptext3.innerHTML = "Health:" + health;
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyHealth;
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
             b3.style.display = "none";
             b4.style.display = "none";
         }
@@ -525,8 +624,8 @@
         function fIsForFriends(){
             pic.src = "images/";
             ptext1.innerHTML = "'Knowledge cannot replace friendship. I’d rather be an idiot than lose you.''";
-            ptext2.innerHTML = "Patrick and Spongebob take you to the portal and you all hug for a final goodbye.";
-            ptext3.innerHTML = "In the end we learned, the point of a journey is the friend you make along the way";
+            ptext2.innerHTML = "After you defeated the giant jellyfish, a portal opens! Patrick and Spongebob take you to the portal and gift you a jar of jelly from the mega jellyfish you caught.";
+            ptext3.innerHTML = "You all hug for a final goodbye. In the end we learned, the point of a journey is the friend you make along the way";
             ptext4.innerHTML = "F is for Friends:  Ending _ of _";
             b1.innerHTML = "Continue";
             b2.innerHTML = "";
@@ -558,7 +657,7 @@
         function tellSponge(){
             pic.src = "images/";
             ptext1.innerHTML = "As you walk together, you start thinking about the pink starfish you killed.";
-            ptext2.innerHTML = "You turn to Spongebob and ask if he knew him. 'Yeah! That's my best friend Patick!'";
+            ptext2.innerHTML = "You turn to Spongebob and ask if he knew him. 'Yeah! That's my best friend Patick! Have you met him?'";
             ptext3.innerHTML = "You begin to feel nervous about this news. What do you do?";
             ptext4.innerHTML = "";
             b1.innerHTML = "Tell the truth";
@@ -571,10 +670,71 @@
             b4.style.display = "none";
         }
         //if you kill Patrick and friend Sponge- tell truth
+        function truthSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You decide to tell the truth";
+            ptext2.innerHTML = "Spongebob blinks at you and slowly turns away, muttering 'leave'";
+            ptext3.innerHTML = "Your guilt takes over and you turn away and leave, not knowing where to go";
+            ptext4.innerHTML = "LOST: Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
 
         //if you kill Patrick and friend Sponge- tell lie
+        function lieSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You decided to lie to Spongebob-";
+            ptext2.innerHTML = "'No, never met him. I wish I could but we should really get going, I have to go home after all.'";
+            ptext3.innerHTML = "Spongebob nods and although you feel guilty about lying, it was for the best. Who knows what could have happened if you told him the truth?";
+            ptext4.innerHTML = "LIAR: Ending _ of _";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
 
-
+        //if Sponge finds out you killed Patrick (run from Sponge)
+        function revengeOfSponge(){
+            pic.src = "images/";
+            ptext1.innerHTML = "As you run away from Spongebob, you notice a dust cloud trailing right behind you. You hide behind a conveniently placed boulder.";
+            ptext2.innerHTML = "You pant, out of breath and exhausted when you hear a high-pitched laughter next to your ear.";
+            ptext3.innerHTML = "REVENGE OF THE SPONGE: Ending _ of _";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
+        //if Patrick finds out you killed Sponge (run from Patrick)
+        function revengeOfPatrick(){
+            pic.src = "images/";
+            ptext1.innerHTML = "You walk away from the body of the yellow sponge when you hear deep laughter above you.";
+            ptext2.innerHTML = "You look up too late when you see the silhouette of a star crush you...";
+            ptext3.innerHTML = "REVENGE OF PATRICK: Ending _ of _";
+            ptext4.innerHTML = "";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "";
+            b3.innerHTML = "";
+            b4.innerHTML = "";
+            b1.style.display = "block";
+            b2.style.display = "none";
+            b3.style.display = "none";
+            b4.style.display = "none";
+        }
         //if you friend Patrick and kill Sponge
         function betrayalOfPatrick(){
             pic.src = "images/";
@@ -627,24 +787,47 @@
                     state = "talkToPatrick";
                 }
             }
-            else if(state=="attackOptions"){
+            else if(state == "talkToPatrick"){
+                if(button == 1){
+                    jellyCatchingPatrick();
+                    state = "jellyCatchingPatrick";
+                }
+                else if(button == 2){
+                    krustyKrabPatrick();
+                    state = "krustyKrabPatrick";
+                }
+            }
+            else if(state == "jellyCatchingPatrick"){
+                if(button == 1){
+                    meetSponge();
+                    state = "meetSponge";
+                }
+            }
+            else if(state == "krustyKrabPatrick"){
+                if(button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if(state == "runAwayPatrick"){
+                if(button == 1){
+                    meetSponge();
+                    state = "meetSponge";
+                }
+            }
+            else if(state == "battlePatrick"){
                 if(button == 1){
                     patrickHealth--;
-                    if(patrickHealth==0){
-                        patrickDeath();
-                        state = "patrickDeath";
-                    } else {
-                        battlePatrickSlap();
-                        state = "battlePatrickSlap";
-                    }
+                    battlePatrickSlap();
+                    state = "battlePatrickSlap";
                 }
                 else if(button == 2){
                     battlePatrickPunch();
                     state = "battlePatrickPunch";
                 }
                 else if(button == 3){
-                    befriendPatrick();
-                    state = "befriendPatrick";
+                    battlePatrickTickle();
+                    state = "battlePatrickTickle";
                 }
                 else if(button == 4){
                     battlePatrickTrombone();
@@ -654,21 +837,20 @@
             else if(state == "battlePatrickSlap"){
                 if(button == 1){
                     patrickHealth--;
-                    if(patrickHealth = 0){
-                        patrickDeath();
-                        state = "patrickDeath";
-                    } else {
-                        battlePatrickSlap();
-                        state = "battlePatrickSlap";
-                    }
+                    battlePatrickSlap();
+                    state = "battlePatrickSlap";
                 }
                 else if(button == 2){
                     battlePatrickPunch();
-                    state= "battlePatrickPunch";
+                    state = "battlePatrickPunch";
                 }
                 else if(button == 3){
-                    befriendPatrick();
-                    state = "befriendPatrick";
+                    battlePatrickTickle();
+                    state = "battlePatrickTickle";
+                }
+                else if(button == 4){
+                    battlePatrickTrombone();
+                    state = "battlePatrickTrombone";
                 }
             }
             else if(state == "battlePatrickPunch"){
@@ -677,14 +859,291 @@
                     state = "gameOver";
                 }
             }
-            else if (state == "befriendPatrick"){
+            else if(state == "battlePatrickTickle"){
                 if(button == 1){
-                    meetBoth();
-                    state = "meetBoth";
+                    battlePatrickSlap();
+                    state = "battlePatrickSlap";
+                }
+                else if(button == 2){
+                    battlePatrickPunch();
+                    state = "battlePatrickPunch";
+                }
+                else if(button == 3){
+                    runAwayPatrick();
+                    state = "runAwayPatrick";
+                }
+                else if(button == 4){
+                    battlePatrickTrombone();
+                    state = "battlePatrickTrombone";
                 }
             }
+            else if (state == "battlePatrickTrombone"){
+                if(button == 1){
+                    patrickDeath();
+                    state = "patrickDeath";
+                }
+            }
+            else if(state == "patrickDeath"){
+                if(patrickHealth = 0){
+                    patrickDeath();
+                    state = "patrickDeath";
+                }
+                else if(button == 1){
+                    meetSponge();
+                    state = "meetSponge";
+                }
+                else if(button == 2){
+                    sendToGoogle();
+                    state = "sendToGoogle";
+                }
+            }
+            else if (state == "meetSponge"){
+                if (button == 1){
+                    battleSponge();
+                    state = "battleSponge";
+                }
+                else if (button == 2){
+                    runAwaySponge();
+                    state = "runAwaySponge";
+                }
+                else if (button == 3){
+                    talkToSponge();
+                    state = "talkToSponge";
+                }
+            }
+            else if (state == "talkToSponge"){
+                if (button == 1){
+                    jellyCatchingSponge();
+                    state = "jellyCatchingSponge";
+                }
+                else if (button == 2){
+                    wheresGarySponge();
+                    state = "wheresGarySponge";
+                }
+            }
+            else if (state == "jellyCatchingSponge"){
+                if (button == 1){
+                    faceJelly();
+                    state = "faceJelly";
+                }
+            }
+            else if (state == "wheresGarySponge"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "runAwaySponge"){
+                if (button == 1){
+                    revengeOfSponge();
+                    state = "revengeOfSponge";                
+                }
+                if (button == 3){
+                    theCowardRoute();
+                    state = "theCowardRoute";
+                }
+            }
+            else if (state == "battleSponge"){
+                if (button == 1){
+                    battleSpongeSlap();
+                    state = "battleSpongeSlap";
+                }
+                else if (button == 2){
+                    battleSpongePunch();
+                    state = "battleSpongePunch";
+                }
+                else if (button == 3){
+                    battleSpongeTickle();
+                    state = "battleSpongeTickle";
+                }
+                else if (button == 4){
+                    battleSpongeTrombone();
+                    state = "battleSpongeTrombone";
+                }
+            }
+            else if (state == "battleSpongeSlap"){
+                if (button == 1){
+                    spongeDeath();
+                    state = "spongeDeath"
+                }
+            }
+            else if (state == "battleSpongePunch"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "battleSpongeTickle"){
+                if (button == 1){
+                    battleSpongeSlap();
+                    state = "battleSpongeSlap";
+                }
+                else if (button == 2){
+                    battleSpongePunch();
+                    state = "battleSpongePunch";
+                }
+                else if (button == 3){
+                    runAwaySponge();
+                    state = "runAwaySponge";
+                }
+                else if (button == 4){
+                    battleSpongeTrombone();
+                    state = "battleSpongeTrombone";
+                }
+            }
+            else if (state == "battleSpongeTrombone"){
+                if (button == 1){
+                    battleSpongeSlap();
+                    state = "battleSpongeSlap";
+                }
+                else if (button == 2){
+                    battleSpongePunch();
+                    state = "battleSpongePunch";
+                }
+                else if (button == 3){
+                    battleSpongeTickle();
+                    state = "battleSpongeTickle";
+                }
+            }
+            else if (state == "spongeDeath"){
+                if(spongeHealth = 0){
+                    spongeDeath();
+                    state = "spongeDeath";
+                }
+                else if(button == 1){
+                    revengeOfPatrick();
+                    state = "revengeOfPatrick";
+                }
+                else if(button == 2){
+                    betrayalOfPatrick();
+                    state = "betrayalOfPatrick";
+                }
+                else if(button == 3){
+                    noMercy();
+                    state = "noMercy";
+                }
+                else if(button == 4){
+                    sendToGoogle();
+                    state = "sendToGoogle";
+                }
+            }
+            else if (state == "faceJelly"){
+                if (button == 1){
+                    battleJelly();
+                    state = "battleJelly";
+                }
+            }
+            else if (state == "battleJelly"){
+                if (button == 1){
+                    battleJellySlap();
+                    state = "battleJellySlap";
+                }
+                else if (button == 2){
+                    battleJellyPunch();
+                    state = "battleJellyPunch";
+                }
+                else if (button == 3){
+                    battleJellyNet();
+                    state = "battleJellyNet";
+                }
+            }
+            else if (state == "battleJellySlap"){
+                if (button == 1){
+                    battleJellySlapAgain();
+                    state = "battleJellySlapAgain"
+                }
+                else if (button == 2){
+                    battleJellyPunch();
+                    state = "battleJellyPunch";
+                }
+                else if (button == 3){
+                    battleJellyNet();
+                    state = "battleJellyNet";
+                }
+            }
+            else if (state == "battleJellySlapAgain"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "battleJellyPunch"){
+                if (button == 1){
+                    battleJellySlap();
+                    state = "battleJellySlap";
+                }
+                else if (button == 2){
+                    battleJellyNet();
+                    state = "battleJellyNet";
+                }
+            }
+            else if (state == "battleJellyNet"){
+                if (button == 1){
+                    fIsForFriends();
+                    state = "fIsForFriends";
+                }
+            }
+            else if (state == "tellSponge"){
+                if (button == 1){
+                    truthSponge();
+                    state = "truthSponge";
+                }
+                else if (button == 2){
+                    lieSponge();
+                    state = "lieSponge";
+                }
+            }
+            else if (state == "truthSponge"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "lieSponge"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "noMercy"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "fIsForFriends"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "revengeOfSponge"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "revengeOfPatrick"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "betrayalOfPatrick"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+            else if (state == "theCowardRoute"){
+                if (button == 1){
+                    gameOver();
+                    state = "gameOver";
+                }
+            }
+
             return false;
-    }
+        }
     
     </script>
     </body>
