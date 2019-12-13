@@ -121,7 +121,7 @@
         var patrickHealth = 100;
         var instantDeath = -100;
         var spongeHealth = 100;
-        var jellyHealth = 1000;
+        var jellyHealth = 100;
         var state = "intro";
         intro();
 
@@ -512,7 +512,7 @@
         function faceJelly(){
             pic.src = "images/facejelly.jpg"
             ptext1.innerHTML = "You, Patrick, and Spongebob walk to the Jellyfish Fields when you encounter the largest jellyfish you have ever seen";
-            ptext2.innerHTML = "Your only choice is to fight";
+            ptext2.innerHTML = "Your only choice is to fight. What do you do?";
             ptext3.innerHTML = "";
             ptext4.innerHTML = "";
             b1.innerHTML = "Continue";
@@ -529,7 +529,7 @@
             pic.src = "images/battlejelly.jpg"
             ptext1.innerHTML = "What will you do?";
             ptext2.innerHTML = "Health:" + health;
-            ptext3.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            ptext3.innerHTML = "Jellyfish Boss:" + jellyHealth;
             ptext4.innerHTML = "";
             b1.innerHTML = "Slap";
             b2.innerHTML = "Punch";
@@ -545,8 +545,8 @@
             pic.src = "images/slapjelly.jpg"
             ptext1.innerHTML = "You choose to slap the jellyfish, but it seems to be ineffective.";
             ptext2.innerHTML = "The jellyfish hits you back with a critical hit!";
-            ptext3.innerHTML = "Health:" + health-60;
-            ptext4.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            ptext3.innerHTML = "Health: 60";
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyHealth;
             b1.innerHTML = "Slap again";
             b2.innerHTML = "Punch";
             b3.innerHTML = "Net";
@@ -562,7 +562,7 @@
             ptext1.innerHTML = "You choose to slap the jellyfish one more time, it's still ineffective.";
             ptext2.innerHTML = "I don't know why you expected it to change, anyway you're dead";
             ptext3.innerHTML = "Health: 0";
-            ptext4.innerHTML = "Jellyfish Boss:" + jellyhealth;
+            ptext4.innerHTML = "Jellyfish Boss:" + jellyHealth;
             b1.innerHTML = "Continue";
             b2.innerHTML = "";
             b3.innerHTML = "";
@@ -578,7 +578,7 @@
             ptext1.innerHTML = "You hit the jellyfish with a punch and manage to do slight damage.";
             ptext2.innerHTML = "It seems to be confused. What do you do?";
             ptext3.innerHTML = "Health:" + health;
-            ptext4.innerHTML = "Jellyfish Boss:" + jellyHealth-20;
+            ptext4.innerHTML = "Jellyfish Boss: 80";
             b1.innerHTML = "Slap";
             b2.innerHTML = "Net";
             b3.innerHTML = "";
