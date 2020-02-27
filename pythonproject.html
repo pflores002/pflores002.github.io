@@ -4,6 +4,21 @@
         <title>Python Project</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <style>
+            #rightpane {
+                width:44%;
+                height: 100%;
+                float:left;
+            }
+            #bottompane {
+                position: absolute;
+                bottom: 0px;
+                left: 0%;
+                right: 10%;
+                height: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
             #description{
                     position: absolute;
                     bottom: 100px;
@@ -54,12 +69,14 @@
                 errors.</p>
             </div>
         </div>
-        <iframe height="600px" width="65%" 
-        src="https://repl.it/@NoahFlaum/Landfried-Python-Project?lite=true" scrolling="no" 
-        frameborder="no" allowtransparency="true" allowfullscreen="true" 
-        sandbox="allow-forms allow-pointer-lock allow-popups 
-        allow-same-origin allow-scripts allow-modals">
-        </iframe>
+        <div id= 'bottompane'>
+            <iframe height="500px" width="85%" 
+            src="https://repl.it/@NoahFlaum/Landfried-Python-Project?lite=true" scrolling="no" 
+            frameborder="no" allowtransparency="true" allowfullscreen="true" 
+            sandbox="allow-forms allow-pointer-lock allow-popups 
+            allow-same-origin allow-scripts allow-modals">
+            </iframe>
+        </div>    
 
     </body>
 </html>
