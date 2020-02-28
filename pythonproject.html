@@ -12,12 +12,16 @@
             #bottom{
                 position: absolute;
                 bottom: 10px;
-                left: 0%;
-                right: 70%;
-                height: 30px;
+                left: 50px;
+                right: 50%;
+                height: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                padding: 10px;
+            }
+            #video{
+                padding: 30px;
             }
             #description{
                     position: absolute;
@@ -48,10 +52,12 @@
         </ul>
         <h1>Bank Account</h1>
         
-        <video width="360" height="390" controls>
-            <source src="video/pythonproj.mp4" type="video/mp4">
-            Your video is not supported in this browser
-        </video>    
+        <div id = "video">
+            <video width="360" height="390" controls>
+                <source src="video/pythonproj.mp4" type="video/mp4">
+                Your video is not supported in this browser
+            </video> 
+        </div>   
 
         <div id='rightpane'>
             <div id='description'> 
